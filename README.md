@@ -1,22 +1,18 @@
-# Predicting Weekly Bacterial Abundance Across Years
+# Lorenz-63 Neural Forecasting
 
-This repository contains the OCES 5303 assignment notebook. It predicts weekly log10 bacterial abundance and classifies samples as Low or High using a seasonal baseline, Ridge regression, and support vector regression. Model performance is evaluated by rotating the held-out year across a three-year coastal time series.
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1DZke7qzqYzRJCKwkCp79ziTDwNuirFWu?usp=sharing)
 
-## Files
+OCES 5303 Assignment 2 investigates whether neural forecasts can reproduce both Lorenz-63 trajectories and the butterfly effect. Parameter-matched CNN and Fourier Neural Operator (FNO) models receive the same initial condition and predict 300 future timesteps.
 
-- `ass1_oces5303_20601408.ipynb` — complete analysis and results
-- `requirements.txt` — required Python packages
+## Main file
 
-The notebook downloads the course dataset directly from its public GitHub source.
+- `ass2_oces5303_20601408.ipynb` — complete PyTorch experiment and discussion
 
-## Run
+## Run in Google Colab
 
-Use Python 3.10, install the dependencies, then restart the notebook kernel and run all cells:
+1. Click **Open in Colab** above.
+2. Select **Runtime → Change runtime type → T4 GPU** when available.
+3. Confirm that `QUICK_RUN = False` for the reported experiment.
+4. Select **Runtime → Run all**.
 
-```bash
-pip install -r requirements.txt
-```
-
-## Data source
-
-[OCES 5303 weekly environmental data](https://github.com/julianmak/OCES4303_ML_ocean/blob/main/PIDweekly_env_data.txt)
+The notebook automatically uses CUDA when a GPU is available and otherwise falls back to MPS or CPU. A free Colab GPU is recommended for the complete training run.
